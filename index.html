@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taha AI</title>
+<style>
+body{margin:0;background:#101827;color:white;font-family:Arial,sans-serif;padding:20px}
+main{max-width:600px;margin:40px auto}
+h1{color:#60a5fa;text-align:center}
+p{text-align:center;color:#cbd5e1}
+#chat{height:45vh;overflow:auto;background:#1e293b;border-radius:15px;padding:12px}
+input{box-sizing:border-box;width:100%;padding:15px;margin-top:12px;border-radius:10px;border:0;font-size:16px}
+button{width:100%;padding:14px;margin-top:8px;background:#2563eb;color:white;border:0;border-radius:10px;font-size:17px}
+.msg{padding:10px;margin:8px 0;background:#334155;border-radius:10px;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main>
+<h1>✨ Taha AI</h1>
+<p>دستیار هوشمند تو</p>
+<div id="chat"><div class="msg">سلام! به Taha AI خوش آمدی. چه کمکی از من برمی‌آید؟</div></div>
+<input id="q" placeholder="پیامت را بنویس...">
+<button onclick="send()">ارسال پیام</button>
+</main>
+<script>
+function send(){
+const q=document.getElementById('q');
+const chat=document.getElementById('chat');
+if(!q.value.trim())return;
+chat.innerHTML+='<div class="msg"><b>تو:</b> '+q.value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>';
+chat.innerHTML+='<div class="msg"><b>Taha AI:</b> برای پاسخ هوشمند واقعی، باید به یک سرویس هوش مصنوعی متصل شوم.</div>';
+q.value='';
+chat.scrollTop=chat.scrollHeight;
+}
+</script>
+</body>
+  </html>
